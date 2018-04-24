@@ -1,0 +1,39 @@
+<mat-card class="example-card">
+  <mat-card-title color="primary">Seus Ramais</mat-card-title>
+  <mat-card-content>
+      <mat-table #table [dataSource]="items$ | async">
+          <ng-container matColumnDef="nome">
+            <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="setor">
+            <mat-header-cell *matHeaderCellDef> Setor </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.setor}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="ramal">
+            <mat-header-cell *matHeaderCellDef> Ramal </mat-header-cell>
+            <mat-cell *matCellDef="let element"> {{element.ramal}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="edit">
+              <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+              <mat-cell class="actions" *matCellDef="let element">
+                <button mat-icon-button (click)="openDialog(element)" mat-icon-button color="primary">
+                    <mat-icon aria-label="Example icon-button with a heart icon">edit</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" (click)="openDialogRemove(element)">
+                    <mat-icon aria-label="Example icon-button with a heart icon">delete</mat-icon>
+                </button>
+              </mat-cell>
+          </ng-container>
+
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+  </mat-card-content>
+  <button class="e-button-floating" mat-fab (click)="openDialog()">
+      <mat-icon aria-label="Adicionar">add</mat-icon>
+  </button>
+</mat-card>
