@@ -3,13 +3,16 @@ import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FirebaseConfig } from './../environments/firebase.config';
 import { AngularFireModule } from 'angularfire2';
+import { FormsModule } from '@angular/forms';
+
 import {
   MatCardModule,
   MatTableModule,
    MatButtonModule,
    MatToolbarModule,
    MatIconModule,
-   MatDialogModule
+   MatDialogModule,
+   MatFormFieldModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -30,6 +33,7 @@ import { FormComponent } from './form.component';
     MatCardModule,
     MatIconModule,
     MatDialogModule,
+    FormsModule,
     AngularFireModule.initializeApp(FirebaseConfig)
   ],
   providers: [],
