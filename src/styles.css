@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
 
 body {
   margin: 0;
@@ -9,5 +9,19 @@ body {
 .content {
   padding: 10px;
   margin: 0 auto;
-  background-color: aliceblue;
+}
+
+button.e-button-floating {
+  position: absolute;
+  right: 15px;
+  bottom: -25px;
+}
+.mat-header-row, .mat-row:last-child {
+  border-bottom-width: 0;
+}
+.mat-header-row, .mat-row {
+  padding-right: 5px !important;
+}
+.actions {
+  width: 90px !important;
 }

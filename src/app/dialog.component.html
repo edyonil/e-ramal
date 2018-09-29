@@ -1,0 +1,13 @@
+<div class="app-form-component">
+  <mat-card>
+    <mat-card-content>
+        <h4 class="mat-subheading-2">Tem certeza que deseja realmente exluir o ramal {{data.ramal}} de {{data.nome}}?</h4>
+        <p>Essa ação não pode ser desfeita</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="onConfirm(true)">Sim</button>
+        <a mat-button (click)="onConfirm(false)">Não</a>
+    </mat-card-actions>
+  </mat-card>
+</div>
+

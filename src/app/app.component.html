@@ -1,38 +1,13 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<mat-toolbar>
-  <span>App E-Ramal</span>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+      <span>App E-Ramal</span>
+      <span class="example-spacer"></span>
+      <mat-icon class="example-icon">more_vert</mat-icon>
+  </mat-toolbar-row>
 </mat-toolbar>
 <div class="content">
-  <h1 class="mat-headline">Sua Lista de Ramais</h1>
-
-  <mat-card class="example-card">
-      <mat-card-title>Seus Ramais</mat-card-title>
-      <mat-card-content>
-          <mat-table #table [dataSource]="items$ | async">
-              <ng-container matColumnDef="nome">
-                <mat-header-cell *matHeaderCellDef> Nome </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.nome}} </mat-cell>
-              </ng-container>
-
-              <ng-container matColumnDef="setor">
-                <mat-header-cell *matHeaderCellDef> Setor </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.setor}} </mat-cell>
-              </ng-container>
-
-              <ng-container matColumnDef="ramal">
-                <mat-header-cell *matHeaderCellDef> Ramal </mat-header-cell>
-                <mat-cell *matCellDef="let element"> {{element.ramal}} </mat-cell>
-              </ng-container>
-
-              <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-              <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-            </mat-table>
-            <button mat-raised-button color="primary" (click)="filter()">Primary</button>
-      </mat-card-content>
-      <button mat-fab (click)="openDialog()">
-          <mat-icon aria-label="Adicionar">home</mat-icon>
-        </button>
-    </mat-card>
+  <router-outlet></router-outlet>
 </div>
 
 
